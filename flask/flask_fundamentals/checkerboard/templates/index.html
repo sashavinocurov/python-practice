@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_style.css') }}">
+</head>
+<style>
+{% if color1%}
+.colbox1{
+    background-color:{{color1}};
+}
+{%endif%}
+{% if color2%}
+.colbox2{
+    background-color:{{color2}};
+}
+{%endif%}
+</style>
+<body>
+
+    <table>
+        {%for i in range (x):%}
+        <tr>
+            {%for j in range(y):%}
+            <td class='colbox{{  (i+j)%2+1  }}'></td>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </table>
+    <!-- <div class="checkerboard">
+       
+        <div class="fourboxes">
+            <div class="blackbox"></div>
+            <div class="whitebox"></div>
+            <div class="whitebox"></div>
+            <div class="blackbox"></div>
+        </div>
+       
+    </div> -->
+
+</body>
+</html>

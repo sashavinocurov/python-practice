@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    padding: 20px;
+    display: inline-block;
+    border: 1px solid black;
+    width: 500px;
+    min-height: 500px;
+    clear: both;
+}
+.container input{
+    width: 100%;
+    clear: both;
+}

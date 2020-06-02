@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='my_static.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the great Number Game!</h1>
+        <p>I am thinking if a number between 1 and 100</p>
+        <p>take a guess</p>
+    
+        
+        <p>{{ session['answer'] }}</p>
+        {%if session['answer'] != "You Guess Correct!"%}
+        
+        <form action= '/process' method='POST'>
+        <div class="box">
+        <input type='text' name='guessnum'>
+        <input type='submit' name='submit' value="Make a Guess!"></div></form>
+        {%else%}
+        <form action= '/reset' method='POST'>
+        <input type='submit' name='submit' value="New Game!"></form>
+        {%endif%}
+    </div>
+
+
+    
+</body>
+</html>
